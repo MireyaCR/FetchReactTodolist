@@ -1,19 +1,10 @@
+import React, { useState } from 'react';
 
-import React, { useState,useEffect} from 'react';
-import { getTodoList } from '../../services/getTodoList';
-import { updateTodoList } from '../../services/updateTodoList';
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
 
 const Home = () => {
 	const [tareas, setTareas] = useState([]);
-	useEffect(() => { 
-		getTodoList().then(response =>setTodoList(response))
-	},[]);
-	useEffect(() =>{
-		updateTodoList(tareas);
-	},[tareas] )
-	
 	return (
 		<div className="container h-25 mt-5 p-5">
 			<h3>Tasks</h3>

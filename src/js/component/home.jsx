@@ -29,8 +29,8 @@ const Home = () => {
 		<div className="container h-25 mt-5 p-5">
 			<h3>Tasks</h3>
 			<input className="form-control sm mb-3" type="text" placeholder='What needs to be done?' onKeyDown={handleKeydown}/>
-			<ul className="list-group list-group-flush">
-				{tareas.map((element, index) => <li key={index+'li'} className="list-group-item"
+			<ul className="list-group list-group-flush ">
+				{tareas.map((element, index) => <li key={index+'li'} className="list-group-item "
 				onMouseEnter={(event)=>{
 					const cmp = event.target.childNodes[1];
 					if (cmp.localName=='button')
@@ -42,7 +42,7 @@ const Home = () => {
 						cmp.style.visibility="hidden"
 				}}>{element}
 				{element != EMPTY? 
-					(<button className="btn btn-outline-danger btn-close" style={{visibility:'hidden'}} key={index} onClick={async(event)=>{
+					(<button className="btn fa fa-times justify-content-around" style={{visibility:'hidden',color:'red'}} key={index} onClick={async(event)=>{
 						tareas.splice(index,1)	
 						if (tareas.length==0){
 							tareas.push(EMPTY)
